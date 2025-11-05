@@ -36,5 +36,11 @@ int main () {
     char* ch = reinterpret_cast <char*> (&num);
     std::cout << "reinterpret_cast = " << *ch << "\n";
 
+    //Const Cast  
+    const int a = 10;
+    int* p = const_cast <int*> (&a); 
+    *p = 20;
+    std::cout << "const_cast = " << a << "\n"; //Compiler-ից կախված կտպի 10 կամ 20, իմ դեպքում տպեց 10
+
     return 0;
 }
