@@ -36,6 +36,16 @@ public:
     }
 };
 
+struct Test {
+    char a; //1 byte
+    int b; //4 bytes
+    char c; //1 byte
+    long long d; //8 bytes
+    char e; //1 byte
+    short f; // 2 bytes
+};
+
+
 int main () {
     int n;
     do {
@@ -51,9 +61,15 @@ int main () {
 
     C object (arr);
     object.foo ();
+    
+    std::cout << "\nStruct Test: \n\n";
+    std::cout << "Size Of Struct = " << sizeof (Test) << " bytes\n";
 
     return 0;
 }
+
+/* Struct-ի դեպքում մենք կունենանք tail padding, որովհետև CPU-ն 8-8 բայթ ա կարդում, դրա համար էլ 28-ից
+alignment ա անելու 32 բայթ (8-ին պատիկ)։ */
 
 
 /* Output
@@ -70,4 +86,8 @@ Field 4: size = 1, address = 24, padding before = 0
 Field 5: size = 2, address = 26, padding before = 1
 
 Total class size = 28 bytes
+
+Struct Test: 
+
+Size Of Struct = 32 bytes
 */
