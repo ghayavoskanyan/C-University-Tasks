@@ -5,19 +5,19 @@ class C {
 private:
     std::vector<size_t> members;
 
-    size_t align (size_t total_size, size_t alignment) {
-        size_t mod = total_size % alignment;
+    size_t align (size_t size, size_t alignment) {
+        size_t mod = size % alignment;
         /* Տիպը պիտի սկսվի այն հասցեից, որ բաժանվի իրա sizeof-ի վրա, դրան պատիկ թիվ լինի */
         if (mod == 0) 
-            return total_size;
-        return total_size + (alignment - mod); /* Ավելացնում ենք padding */
+            return size;
+        return size + (alignment - mod); /* Ավելացնում ենք padding */
     }
 
 public:
     C (const std::vector <size_t>& m) : members (m) {}
     ~C () {}
 
-    void foo () {
+    void get_align_info () {
         size_t total_size = 0;
 
         std::cout << "\nResult:\n\n";
@@ -60,7 +60,7 @@ int main () {
         std::cin >> arr[i];
 
     C object (arr);
-    object.foo ();
+    object.get_align_info ();
     
     std::cout << "\nStruct Test: \n\n";
     std::cout << "Size Of Struct = " << sizeof (Test) << " bytes\n";
