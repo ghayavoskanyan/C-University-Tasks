@@ -1,5 +1,3 @@
-/* esi piti popoxel */
-
 #include <iostream>
 
 class B {
