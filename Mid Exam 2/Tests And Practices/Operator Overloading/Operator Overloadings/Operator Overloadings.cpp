@@ -24,7 +24,7 @@ struct YouTubeChannel {
     }
 };
 
-//ավելացրել եմ ostream& և return COUT; որ կարողանամ անել cout << yt1 << yt1;
+//ավելացրել եմ ostream& և return COUT; որ կարողանամ անել cout << yt1 << yt2;
 ostream& operator<<(ostream& COUT, YouTubeChannel& ytChannel) {
     COUT << "Name: " << ytChannel.Name << "\n";
     COUT << "Subscribers: " << ytChannel.SubscribersCount << "\n";
